@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>વિરતી જૈન પાઠશાળા પિકનિક આભાર</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans Gujarati', Arial, sans-serif;
+            background: linear-gradient(135deg, #FF6B35, #F7931E, #FFCC02, #9ACD32);
+            background-size: 400% 400%;
+            animation: gradientShift 6s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .card {
+            width: 800px;
+            max-width: 95vw;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #FF6B35, #D32F2F);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.1) 10px,
+                rgba(255, 255, 255, 0.1) 20px
+            );
+            animation: movePattern 20s linear infinite;
+        }
+        
+        @keyframes movePattern {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .school-name {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .jay-jinendra {
+            font-size: 1.8em;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .content {
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .title {
+            font-size: 2.5em;
+            color: #D32F2F;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+        
+        .subtitle {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        
+        .donors-section {
+            background: linear-gradient(135deg, #FFF3E0, #FFECB3);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 3px solid #FFB74D;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .donors-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .donors-title {
+            font-size: 2em;
+            color: #E65100;
+            margin-bottom: 20px;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .donor-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .donor-row:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .amount {
+            color: #2E7D32;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .total-section {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+        }
+        
+        .total-amount {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .gratitude {
+            font-size: 1.5em;
+            color: #D32F2F;
+            margin: 25px 0;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #FF6B35, #D32F2F);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact {
+            font-size: 1.3em;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        
+        .floating-emoji {
+            position: absolute;
+            font-size: 2em;
+            opacity: 0.7;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .emoji-1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .emoji-2 { top: 20%; right: 8%; animation-delay: 1s; }
+        .emoji-3 { bottom: 15%; left: 10%; animation-delay: 2s; }
+        .emoji-4 { bottom: 25%; right: 5%; animation-delay: 3s; }
+        
+        @media (max-width: 768px) {
+            .school-name { font-size: 1.8em; }
+            .jay-jinendra { font-size: 1.4em; }
+            .title { font-size: 2em; }
+            .subtitle { font-size: 1.2em; }
+            .donor-row { font-size: 1em; flex-direction: column; text-align: center; }
+            .amount { margin-top: 5px; }
+            .total-amount { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="floating-emoji emoji-1">🌺</div>
+        <div class="floating-emoji emoji-2">🎉</div>
+        <div class="floating-emoji emoji-3">🙏</div>
+        <div class="floating-emoji emoji-4">✨</div>
+        
+        <div class="header">
+            <div class="school-name">🕉️ વિરતી જૈન પાઠશાળા, ઘાટલોડિયા 🕉️</div>
+            <div class="jay-jinendra">🙏 જય જિનેન્દ્ર 🌺</div>
+        </div>
+        
+        <div class="content">
+            <div class="title">🎉 પિકનિકની ખુશખબર! 🎊</div>
+            <div class="subtitle">
+                🌟 આવતીકાલે રવિવારના દિવસે આપણાં બાળકો માટે આનંદમય પિકનિક! 🌟<br>
+                💖 અમારા પ્રિય દાતાઓનો ઉદાર સહયોગ 💖
+            </div>
+            
+            <div class="donors-section">
+                <div class="donors-title">🏆 આપણા દાતાઓ - હાર્દિક આભાર! 🙏</div>
+                
+                <div class="donor-row">
+                    <span>🥇 હંસાબેન પદ્મકાંતભાઈ મેહતા</span>
+                    <span class="amount">₹11,000/-</span>
+                </div>
+                
+                <div class="donor-row">
+                    <span>🥈 કલ્પેશભાઈ શેઠ </span>
+                    <span class="amount">₹10,000/- </span>
+                </div>
+                <div class="donor-row">
+                    <span>🥈 વારીશ ભાઇ દોશી  </span>
+                    <span class="amount">₹10,000/- </span>
+                </div>
+                
+                <div class="donor-row">
+                    <span>🥉 વિહાન અને હીર શેઠ (હસ્તે.મિતુલ ભાઇ શેઠ) </span>
+                    <span class="amount">₹7,500/- </span>
+                </div>
+                <div class="donor-row">
+                    <span>🥉 જસ્વન્તિ બેન કોઠારી (હસ્તે.શૈલી બેન કોઠારી) </span>
+                    <span class="amount">₹7,500/- </span>
+                </div>
+                
+                <div class="donor-row">
+                    <span>💎 એક ગુરુભક્ત તરફથી</span>
+                    <span class="amount">₹5,001/- </span>
+                </div>
+                <div class="donor-row">
+                    <span>💎 સુશ્રાવક પરિવાર તરફથી</span>
+                    <span class="amount">₹5,001/- </span>
+                </div>
+                
+                <div class="donor-row">
+                    <span>💰 ડો. વિપુલભાઈ તુરખિયા</span>
+                    <span class="amount">₹5,000/- </span>
+                </div>
+                <div class="donor-row">
+                    <span>💰 મનન કેતનભાઈ શાહ</span>
+                    <span class="amount">₹5,000/- </span>
+                </div>
+                
+                <div class="donor-row">
+                    <span>🤝 સચિન ભાઇ મુનોત </span>
+                    <span class="amount">₹2,500/- </span>
+                </div>
+                <div class="donor-row">
+                    <span>🤝 જીગ્નાબેન ધર્મેશભાઈ કાચવાળા</span>
+                    <span class="amount">₹2,500/- </span>
+                </div>
+                <div class="donor-row">
+                    <span>🤝 હર્ષા બેન ગૌતમ ભાઇ શેઠ </span>
+                    <span class="amount">₹2,500/- </span>
+                </div>
+                <div class="donor-row">
+                    <span>🤝 ઝરણાં બેન હિરેન કુમાર શાહ</span>
+                    <span class="amount">₹2,500/- </span>
+                </div>
+            </div>
+            
+            <div class="gratitude">
+                🙏 તમામ દાતાઓનો દિલથી આભાર!<br>
+                🎈 બાળકો માટે અવિસ્મરણીય પિકનિક! 🎈<br>
+                💫 આપના પ્રેમથી સમુદાય મજબૂત! 💫
+            </div>
+        </div>
+        
+        <div class="footer">
+            🌸 જય જિનેન્દ્ર 🌸
+            <div class="contact">📞 સંપર્ક: <a href="tel:9726912218" style="text-decoration: none;">9726912218</a></div>
+        </div>
+    </div>
+</body>
+</html>
